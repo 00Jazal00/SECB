@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.para{
+    padding-top: 30px;
+    text-align: center;
+}
+.clr {
+    color: green;
+    transition-duration: 0.1s;
+    cursor: pointer;
+}
+
+.clr:hover {
+    font-weight: bold;
+    color: red;
+}
