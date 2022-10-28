@@ -1,0 +1,559 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="SECB" />
+    <meta name="description" content="SECB - Jobs and Scholarships" />
+    <meta name="author" content="USK" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>SECB - Jobs and Scholarships</title>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700" rel="stylesheet">
+
+    <!-- CSS Global Compulsory (Do not remove)-->
+    <link rel="stylesheet" href="{% static 'home/css/font-awesome/all.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'home/css/flaticon/flaticon.css' %}" />
+    <link rel="stylesheet" href="{% static 'home/css/bootstrap/bootstrap.min.css' %}" />
+
+    <!-- Page CSS Implementing Plugins (Remove the plugin CSS here if site does not use that feature)-->
+    <link rel="stylesheet" href="{% static 'home/css/select2/select2.css' %}" />
+    <link rel="stylesheet" href="{% static 'home/css/owl-carousel/owl.carousel.min.css' %}" />
+
+    <!-- Template Style -->
+    <link rel="stylesheet" href="{% static 'home/css/style.css' %}" />
+  </head>
+  <body>
+
+<!--=================================
+Header -->
+<header class="header header-transparent">
+  <nav class="navbar navbar-static-top navbar-expand-lg header-sticky navbar-dark">
+    <div class="container-fluid">
+      <button id="nav-icon4" type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse">
+          <span></span>
+          <span></span>
+          <span></span>
+      </button>
+      <a class="navbar-brand" href="index.html">
+        <!-- <img class="img-fluid" src="images/logo-light.svg" alt="logo"> -->
+        <h1 style="color: white;">S<span style="color: #21c87a;">E</span>CB</h1>
+      </a>
+      <div class="navbar-collapse collapse justify-content-start">
+        <ul class="nav navbar-nav">
+          <li class="nav-item dropdown active">
+            <a class="nav-link" href="#" id="navbarDropdown" role="button">Home</a>
+            
+          </li>        
+          <li class="nav-item dropdown cursur-pointer">
+            <a class="nav-link dropdown-toggle" href="jobs.html">
+              Jobs </a>
+          </li>
+          <li class="nav-item dropdown cursur-pointer">
+            <a class="nav-link dropdown-toggle">
+              Scholerships </a>
+          </li>
+          <li class="nav-item dropdown cursur-pointer">
+            <a class="nav-link dropdown-toggle">
+              Internships </a>
+          </li>
+           
+          <li class="nav-item dropdown cursur-pointer">
+            <a class="nav-link dropdown-toggle" href="blog.html">
+              Blog </a>
+          </li>
+          <li class="nav-item dropdown cursur-pointer">
+            <a class="nav-link dropdown-toggle">
+              Courses</a>
+          </li>
+          
+         
+        </ul>
+      </div>
+      <div class="add-listing">
+          <div class="login d-inline-block me-4">
+            <a href="login.html" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><i class="far fa-user pe-2"></i>Sign up</a>
+          </div>
+          <a class="btn btn-white btn-md" href="post-a-job.html"><i class="far fa-user pe-2"></i>Sign in</a>
+        </div>
+    </div>
+  </nav>
+</header>
+<!--=================================
+Header -->
+
+<!--=================================
+Banner -->
+<section class="position-relative">
+  <div class="banner-2 bg-holder bg-overlay-black-20 text-dark" style="background-image: url(/media/home/images/bg/banner-01.jpg);">
+    <div class="container position-relative">
+      <div class="row">
+        <div class="col-lg-9">
+            <h1 class="text-white">We actually <span class="text-primary"> change people’s</span> lives</h1>
+            <p class="lead mb-4 mb-lg-5 fw-normal text-white">Find Jobs, Scholarship</p>
+              <form class="form-inline icon">
+                <div class="row g-0 w-100">
+                  <div class="col-sm-4 col-md-3">
+                    <div class="input-group d-flex align-items-center">
+                      <input type="text" class="form-control"  placeholder="Keywords">
+                    </div>
+                  </div>
+                  <div class="col-sm-4 col-md-3">
+                    <div class="input-group">
+                      <select class="form-control ">
+                        <option>All Categories</option>
+                        <option>Education</option>
+                        <option>Accountancy</option>
+                        <option>Architecture</option>
+                        <option>Finance</option>
+                        <option>IT Contractor</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-sm-4 col-md-3">
+                    <div class="input-group d-flex align-items-center">
+                      <input type="text" class="form-control" placeholder="Location">
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                  <button type="submit" class="btn btn-primary btn-lg m-0">Find</button>
+                  </div>
+                </div>
+              </form>
+          <div class="job-tag mt-4">
+            <ul class="text-center">
+              <li class="text-primary">Trending Keywords :</li>
+              <li><a href="#">This will help you to find your meaningful things : )</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--=================================
+Banner -->
+
+<!-- =========================
+Affilate -->
+<section class="space-ptb">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 col-md-10">
+        <div class="section-title white center">
+          <h2 class="title"><span>Our <span style="color: #21c87a;">Suppoters</span></span></h2>
+           
+        </div>
+      </div>
+    </div>
+ <div class="row row-cols-1 row-cols-md-3">
+
+  <div class="col-md-3 mb-1 cls-hover mt-4">
+    <div class="card h-100">
+      <img src="media/home/images/dp.png" class="card-img-top" alt="...">
+      <div class="card-body text-center">
+        <h5 class="card-title">C. Name</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 mb-1 cls-hover mt-4">
+    <div class="card h-100">
+      <img src="media/home/images/dp.png" class="card-img-top" alt="...">
+      <div class="card-body text-center">
+        <h5 class="card-title">C. Name</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 mb-1 cls-hover mt-4">
+    <div class="card h-100">
+      <img src="media/home/images/dp.png" class="card-img-top" alt="...">
+      <div class="card-body text-center">
+        <h5 class="card-title">C. Name</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 mb-1 cls-hover mt-4">
+    <div class="card h-100">
+      <img src="media/home/images/dp.png" class="card-img-top" alt="...">
+      <div class="card-body text-center">
+        <h5 class="card-title">C. Name</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 mb-1 cls-hover mt-4">
+    <div class="card h-100">
+      <img src="media/home/images/dp.png" class="card-img-top" alt="...">
+      <div class="card-body text-center">
+        <h5 class="card-title">C. Name</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 mb-1 cls-hover mt-4">
+    <div class="card h-100">
+      <img src="media/home/images/dp.png" class="card-img-top" alt="...">
+      <div class="card-body text-center">
+        <h5 class="card-title">C. Name</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 mb-1 cls-hover mt-4">
+    <div class="card h-100">
+      <img src="media/home/images/dp.png" class="card-img-top" alt="...">
+      <div class="card-body text-center">
+        <h5 class="card-title">C. Name</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 mb-1 cls-hover mt-4">
+    <div class="card h-100">
+      <img src="media/home/images/dp.png" class="card-img-top" alt="...">
+      <div class="card-body text-center">
+        <h5 class="card-title">C. Name</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+  </div>
+
+  
+ 
+ <div style="width: max-content; margin:auto;">
+   <a class="btn btn-white btn-md mt-4" style="border: 1px solid #21c87a;" href="#">See More</a>
+ </div>
+</div>
+</div>
+</section>
+
+
+<!-- =========================
+Affilate -->
+
+
+<!--=================================
+Job-list -->
+<section class="space-ptb bg-holder bg-dark" style="background-image: url(media/home/images/bg/01.png);">
+<!-- <section class="space-ptb bg-overlay-black-90 bg-holder" style="background-image: url('images/bg/05.jpg');"> -->
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 col-md-10">
+        <div class="section-title white center">
+          <h2 class="title text-white"><span>How it work</span></h2>
+           <p class="text-white">Give yourself the power of responsibility. Remind yourself the only thing stopping you is yourself.</p>
+        </div>
+      </div>
+    </div>
+    <div class="row bg-holder-pattern mt-3 mt-md-4 me-md-0 ms-md-0 position-relative" style="background-image: url('media/home/images/step/pattern-01.png');">
+      <div class="col-md-4 mb-4 mb-md-0">
+        <div class="feature-step text-center">
+          <div class="feature-info-img mb-4">
+            <img src="media/home/images/step/01.jpg" alt="">
+            <div class="feature-info-icon">
+              <i class="flaticon-resume"></i>
+            </div>
+          </div>
+          <div class="feature-info-content pb-2 pb-md-0">
+            <h5 class="text-white">Create Account</h5>
+            <p class="mb-0 text-white">Create an account and access your saved settings on any device.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4 mb-md-0">
+        <div class="feature-step text-center">
+          <div class="feature-info-img mb-4">
+            <img src="media/home/images/step/02.jpg" alt="">
+            <div class="feature-info-icon">
+              <i class="flaticon-job"></i>
+            </div>
+          </div>
+          <div class="feature-info-content pb-2 pb-md-0">
+            <h5 class="text-white">Find Your Vacancy</h5>
+            <p class="mb-0 text-white">Don't just find. Be found. Put your CV in front of great employers.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-step text-center">
+          <div class="feature-info-img mb-4">
+            <img src="media/home/images/step/03.jpg" alt="">
+            <div class="feature-info-icon">
+              <i class="flaticon-notification"></i>
+            </div>
+          </div>
+          <div class="feature-info-content">
+            <h5 class="text-white">Get A Job</h5>
+            <p class="mb-0 text-white">Your next career move starts here. Choose Job from thousands of companies</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--=================================
+Job-list -->
+
+<!--=================================
+Testimonial Style 02 -->
+<section class="space-ptb bg-light">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 col-md-10">
+        <div class="section-title center">
+          <h2 class="title"><span>What Our Happy Clients say about us</span></h2>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col">
+        <div class="owl-carousel owl-nav-bottom-center testimonial-style-02" data-nav-arrow="false" data-items="2" data-md-items="1" data-sm-items="1" data-xs-items="1" data-xx-items="1" data-space="30" data-autoheight="true">
+          <div class="item">
+            <div class="testimonial-content">
+              <p><i class="fas fa-quote-left quotes"></i>The Jobster database has been one of our current sources for recruitment, backed by a very experienced team who would go out of their way to make sure that requests are taken ahead. </p>
+            </div>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar avatar avatar-xl">
+                <img class="img-fluid rounded-circle" src="media/home/images/avatar/01.jpg" alt="">
+              </div>
+              <div class="testimonial-name">
+                <h6 class="mb-1">Michael Bean</h6>
+                <span>Web Developer <br>
+                  <span class="fa fa-star" style="color: #ff9800;"></span>
+                  <span class="fa fa-star" style="color: #ff9800;"></span>
+                  <span class="fa fa-star" style="color: #ff9800;"></span>
+                  <span class="fa fa-star" style="color: #ff9800;"></span>
+                </span>
+
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="testimonial-content">
+              <p><i class="fas fa-quote-left quotes"></i>Portal is very user-friendly in terms of searching for resumes and job postings. Also, they have an excellent database to search for resumes. As far as services are involved, it's terrific! </p>
+            </div>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar avatar avatar-xl">
+                <img class="img-fluid rounded-circle" src="media/home/images/avatar/02.jpg" alt="">
+              </div>
+              <div class="testimonial-name">
+                <h6 class="mb-1">Anne Smith</h6>
+                <span>Project Manager
+                  <br>
+                  <span class="fa fa-star" style="color: #ff9800;"></span>
+                  <span class="fa fa-star" style="color: #ff9800;"></span>
+                  <span class="fa fa-star" style="color: #ff9800;"></span>
+                  <span class="fa fa-star" style="color: #ff9800;"></span>
+                  <span class="fa fa-star" style="color: #ff9800;"></span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="testimonial-content">
+              <p><i class="fas fa-quote-left quotes"></i>Jobster is an excellent job portal. We value the resumes received through this channel. Magic Search and Power search are handy tools. We are delighted with their service.</p>
+            </div>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar avatar avatar-xl">
+                <img class="img-fluid rounded-circle" src="media/home/images/avatar/04.jpg" alt="">
+              </div>
+              <div class="testimonial-name">
+                <h6 class="mb-1">Vickie Meyer</h6>
+                <span>Product Designer
+                  <br>
+                  <span class="fa fa-star" style="color: #ff9800;"></span>
+                  <span class="fa fa-star" style="color: #ff9800;"></span>
+                  <span class="fa fa-star" style="color: #ff9800;"></span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--=================================
+Testimonial Style 02 -->
+
+
+
+<!--=================================
+jobster-Counter -->
+<section class="bg-dark">
+  <div class="container py-5">
+    <div class="row">
+      <div class="col-lg-3 col-sm-6">
+        <div class="counter my-4">
+          <div class="counter-icon">
+            <i class="flaticon-contract"></i>
+          </div>
+          <div class="counter-content">
+            <span class="timer text-white" data-to="1227" data-speed="10000">1227</span>
+            <label class="mb-0 text-white">Jobs Posted</label>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-6">
+        <div class="counter my-4">
+          <div class="counter-icon">
+            <i class="flaticon-job-3"></i>
+          </div>
+          <div class="counter-content">
+            <span class="timer mb-1 text-white" data-to="123" data-speed="10000">123</span>
+            <label class="mb-0 text-white">Jobs Filled</label>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-6">
+        <div class="counter my-4">
+          <div class="counter-icon">
+            <i class="flaticon-apartment"></i>
+          </div>
+          <div class="counter-content">
+            <span class="timer mb-1 text-white" data-to="170" data-speed="10000">170</span>
+            <label class="mb-0 text-white">Companies</label>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-6">
+        <div class="counter my-4">
+          <div class="counter-icon">
+            <i class="flaticon-group"></i>
+          </div>
+          <div class="counter-content">
+            <span class="timer mb-1 text-white" data-to="127" data-speed="10000">127</span>
+            <label class="mb-0 text-white">Members</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--=================================
+jobster-Counter -->
+
+
+
+<!--=================================
+Action box -->
+<section class="space-ptb bg-holder bg-overlay-black-60" style="background-image: url(media/home/images/bg/banner-01.jpg);">
+  <div class="container">
+    <div class="row align-items-center position-relative">
+      <div class="col-xl-8 col-lg-7">
+        <div class="section-title mb-0">
+          <span class="text-primary lead fw-bold d-block mb-3">Post OR Get a job</span>
+          <h2 class="text-white">Looking for Post OR Get a job? We have end-to-end solutions that can keep up with your criteria.</h2>
+        </div>
+      </div>
+      <div class="col-xl-4 col-lg-5 mt-4 mt-lg-0">
+        <a class="btn btn-primary" href="#">Post a job</a>
+        <a class="btn btn-white ms-2 ms-sm-4" href="#">Browse jobs</a>
+      </div>
+    </div>
+  </div>
+</section>
+<!--=================================
+Action box -->
+
+<!--=================================
+feature-info -->
+<section class="space-ptb">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 col-md-10">
+        <div class="section-title center">
+          <h2 class="title"><span>NEWS<span style="color: #21c87a;">LETTER</span></span></h2>
+          <p class="mb-0">Subscribe to our newsletter and get 10% off your first purchase</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+     <div class="col-xl-8" style="margin: auto;">
+       
+       
+       <form action="/" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+<div class="input-group mb-3">
+  <input type="email" style="border-top-left-radius: 30px; border-bottom-left-radius: 30px;" class="form-control btn-inp"  placeholder="Recipient's email" aria-label="Recipient's username" aria-describedby="button-addon2" name="newsletter" required>
+  <div class="input-group-append">
+    <button class="btn btn-outline-secondary btn-m" style="border-top-right-radius: 30px; border-bottom-right-radius: 30px;" type="submit" id="button-addon2">Subscribe</button>
+  </div>
+</div>
+</form>
+      </div>
+    
+      </div>
+    </div>
+</section>
+<!--=================================
+feature-info -->
+
+<!--=================================
+Let’s Get In Touch -->
+
+
+<!--=================================
+Footer-->
+<footer class="footer bg-light">
+
+  <div class="footer-bottom bg-dark">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 ">
+          <div class="d-flex justify-content-md-start justify-content-center">
+            <ul class="list-unstyled d-flex mb-0">
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Team</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6 text-center text-md-end mt-4 mt-md-0">
+          <p class="mb-0 text-white"> &copy;Copyright <span id="copyright"> <script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script></span> <span style="color: #21c87a;">SECB</span> All Rights Reserved </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!--=================================
+Footer-->
+
+<!--=================================
+Back To Top-->
+   <div id="back-to-top" class="back-to-top">
+     <i class="fas fa-angle-up"></i>
+   </div>
+<!--=================================
+Back To Top-->
+
+
+<!--=================================
+Javascript -->
+
+  <!-- JS Global Compulsory (Do not remove)-->
+  <script src="{% static 'home/js/jquery-3.6.0.min.js' %}"></script>
+  <script src="{% static 'home/js/popper/popper.min.js' %}"></script>
+  <script src="{% static 'home/js/bootstrap/bootstrap.min.js' %}"></script>
+
+  <!-- Page JS Implementing Plugins (Remove the plugin script here if site does not use that feature)-->
+  <script src="{% static 'home/js/jquery.appear.js' %}"></script>
+  <script src="{% static 'home/js/counter/jquery.countTo.js' %}"></script>
+  <script src="{% static 'home/js/owl-carousel/owl-carousel.min.js' %}"></script>
+  <script src="{% static 'home/js/select2/select2.full.js' %}"></script>
+
+  <!-- Template Scripts (Do not remove)-->
+  <script src="{% static 'home/js/custom.js' %}"></script>
+  <script type="text/javascript">
+    // adding alert fro newsletter
+    {% if news_msg == True %}
+    var myVariable = "Successfully Subscribed!";
+    alert(myVariable)
+    {% endif %}
+  </script>
+</body>
+</html>
