@@ -1,0 +1,270 @@
+{% extends '../require/basic.html' %}
+{% load static %}
+{% block topNav %}
+<li class="nav-item dropdown">
+  <a class="nav-link" href="/" id="navbarDropdown" role="button">Home</a>
+</li>
+
+<li class="nav-item dropdown cursur-pointer">
+  <a class="nav-link dropdown-toggle" href="/jobs/">
+    Jobs </a>
+</li>
+<li class="nav-item dropdown cursur-pointer">
+  <a class="nav-link dropdown-toggle">
+    Scholerships </a>
+</li>
+<li class="nav-item dropdown cursur-pointer">
+  <a class="nav-link dropdown-toggle">
+    Internships </a>
+</li>
+
+<li class="nav-item dropdown cursur-pointer active">
+  <a class="nav-link dropdown-toggle"  href="/blog/1">
+    Blog </a>
+</li>
+<li class="nav-item dropdown cursur-pointer">
+  <a class="nav-link dropdown-toggle">
+    Courses</a>
+</li>
+{% endblock %}
+{% block mainBody %} 
+<!--=================================
+Header -->
+<!--=================================
+inner banner -->
+<div class="header-inner bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-12">
+        <h2 class="text-primary">Blog</h2>
+        <ol class="breadcrumb mb-0 p-0">
+          <li class="breadcrumb-item"><a href="/"> Home </a></li>
+          <li class="breadcrumb-item active"> <i class="fas fa-chevron-right"></i><a href="/blog/"><span> Blog</span></a></li>
+        </ol>
+      </div>
+    </div>
+    <br>
+    <form action="/BlogSearch/" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+<div class="input-group mb-3">
+  <input type="text" style="border-top-left-radius: 30px; border-bottom-left-radius: 30px;" class="form-control btn-inp"  placeholder="Search..." aria-label="Recipient's username" aria-describedby="button-addon2" name="search" required>
+  <div class="input-group-append">
+    <button class="btn btn-outline-secondary btn-m" style="border-top-right-radius: 30px; border-bottom-right-radius: 30px;" type="submit" id="button-addon2">Search</button>
+  </div>
+</div>
+</form>
+  </div>
+</div>
+
+
+
+<!--=================================
+inner banner -->
+
+
+<!--=================================
+blog -->
+<section class="space-ptb">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          {% for i in all_post%}
+          {% if forloop.counter <= 5 %}
+
+
+
+          {% if i.type == 'image' %}
+          <div class="blog-post mb-4 mb-sm-5">
+            <div class="blog-post-image">
+              <img class="img-fluid" src="/media/{{i.picture}}" alt="">
+            </div>
+            <div class="blog-post-content">
+              <div class="blog-post-details">
+                <div class="blog-post-category">
+                  <a class="mb-1" href="#">{{i.topic}}</a>
+                </div>
+                 <h5 class="post-title"><a href="/BlogDetail/{{i.code}}">{{i.title}}</a></h5>
+                <p>{{i.description_1|safe|slice:":300"}}</p>
+              </div>
+              <div class="blog-post-footer">
+                <div class="blog-post-time">
+                  <a href="#"><i class="far fa-clock"></i>{{i.publish_date |date:"d M, Y"}}</a>
+                </div>
+                <div class="blog-post-comment">
+                  <a href="#"><i class="far fa-comment"></i>({{i.comment}})</a>
+                </div>
+                <div class="blog-post-share">
+                  <div class="share-box">
+                    <a href="#"> <i class="fas fa-share-alt"></i><span class="ps-2">Share</span></a>
+                    <ul class="list-unstyled share-box-social">
+                      <li> <a href="#"><i class="fab fa-facebook-f"></i></a> </li>
+                      <li> <a href="#"><i class="fab fa-twitter"></i></a> </li>
+                      <li> <a href="#"><i class="fab fa-linkedin"></i></a> </li>
+                      <li> <a href="#"><i class="fab fa-instagram"></i></a> </li>
+                      <li> <a href="#"><i class="fab fa-pinterest"></i></a> </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endif %}
+
+          {% if i.type == 'quote' %}
+          <div class="blog-post blog-post-quote mt-4 bg-primary">
+            <div class="blog-post-content">
+              <div class="blockquote text-center">
+                <blockquote class="text-white mb-0">
+                  <i class="fas fa-quote-right"></i>
+                  <p>{{i.quote_header}}</p>
+                  <cite>– {{i.quote_writer_name}}</cite>
+                </blockquote>
+              </div>
+              <div class="blog-post-details text-center">
+                <div class="blog-post-category">
+                  <a class="mb-1" href="#">{{i.topic}}</a>
+                </div>
+                <div class="blog-post-title mt-3">
+                  <h5><a href="/BlogDetail/{{i.code}}">{{i.title}} </a></h5>
+                </div>
+              </div>
+              <div class="blog-post-footer mt-4 mt-md-5">
+                <div class="blog-post-time">
+                  <a href="#"><i class="far fa-clock"></i>{{i.publish_date |date:"d M, Y"}}</a>
+                </div>
+                <div class="blog-post-comment">
+                  <a href="#"><i class="far fa-comment"></i>({{i.comment}})</a>
+                </div>
+                <div class="blog-post-share">
+                  <div class="share-box share-dark-bg">
+                    <a href="#"> <i class="fas fa-share-alt"></i><span class="ps-2">Share</span></a>
+                    <ul class="list-unstyled share-box-social">
+                      <li> <a href="#"><i class="fab fa-facebook-f"></i></a> </li>
+                      <li> <a href="#"><i class="fab fa-twitter"></i></a> </li>
+                      <li> <a href="#"><i class="fab fa-linkedin"></i></a> </li>
+                      <li> <a href="#"><i class="fab fa-instagram"></i></a> </li>
+                      <li> <a href="#"><i class="fab fa-pinterest"></i></a> </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endif %}
+
+          {% if i.type == 'text' %}
+          <div class="blog-post post-without-image mt-4 mt-sm-5 text-center">
+            <div class="blog-post-content pt-0">
+              <div class="blog-post-details mt-4 mt-md-5">
+                <div class="blog-post-category">
+                  <a class="mb-1" href="#">{{i.topic}}</a>
+                </div>
+                <div class="blog-post-title">
+                  <h4><a href="/BlogDetail/{{i.code}}">{{i.title}}</a></h4>
+                </div>
+                <div class="blog-post-description">
+                  <p class="mb-0">{{i.description|safe|slice:":300"}}</p>
+                </div>
+              </div>
+              <div class="blog-post-footer mt-4 mt-md-5">
+                <div class="blog-post-time">
+                  <a href="#"><i class="far fa-clock"></i>{{i.publish_date |date:"d M, Y"}}</a>
+                </div>
+                <div class="blog-post-comment">
+                  <a href="#"><i class="far fa-comment"></i>({{i.comment}})</a>
+                </div>
+                <div class="blog-post-share">
+                  <div class="share-box">
+                    <a href="#"> <i class="fas fa-share-alt"></i><span class="ps-2">Share</span></a>
+                    <ul class="list-unstyled share-box-social">
+                      <li> <a href="#"><i class="fab fa-facebook-f"></i></a> </li>
+                      <li> <a href="#"><i class="fab fa-twitter"></i></a> </li>
+                      <li> <a href="#"><i class="fab fa-linkedin"></i></a> </li>
+                      <li> <a href="#"><i class="fab fa-instagram"></i></a> </li>
+                      <li> <a href="#"><i class="fab fa-pinterest"></i></a> </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endif %}
+
+
+          {% if i.type == 'video' %}
+          <div class="blog-post blog-post-you-tube text-center mt-4 mt-sm-5">
+            <div class="js-video [youtube, widescreen]">
+              <iframe src="{{i.video}}" allowfullscreen></iframe>
+            </div>
+            <div class="blog-post-content">
+              <div class="blog-post-details">
+                <div class="blog-post-category">
+                  <a class="mb-1" href="#">{{i.topic}}</a>
+                </div>
+                <div class="blog-post-title">
+                  <h4><a href="/BlogDetail/{{i.code}}">{{i.title}}</a></h4>
+                </div>
+                <div class="blog-post-description">
+                  <p class="mb-0">{{i.description_1|safe|slice:":300"}}</p>
+                </div>
+              </div>
+              <div class="blog-post-footer mt-4 mt-md-5">
+                <div class="blog-post-time">
+                  <a href="#"><i class="far fa-clock"></i>{{i.publish_date |date:"d M, Y"}}</a>
+                </div>
+                <div class="blog-post-comment">
+                  <a href="#"><i class="far fa-comment"></i>({{i.comment}})</a>
+                </div>
+                <div class="blog-post-share">
+                  <div class="share-box">
+                    <a href="#"> <i class="fas fa-share-alt"></i><span class="ps-2">Share</span></a>
+                    <ul class="list-unstyled share-box-social">
+                      <li> <a href="#"><i class="fab fa-facebook-f"></i></a> </li>
+                      <li> <a href="#"><i class="fab fa-twitter"></i></a> </li>
+                      <li> <a href="#"><i class="fab fa-linkedin"></i></a> </li>
+                      <li> <a href="#"><i class="fab fa-instagram"></i></a> </li>
+                      <li> <a href="#"><i class="fab fa-pinterest"></i></a> </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endif %}
+
+
+
+
+
+
+          {% endif %}
+          {% empty %}
+          <p>Sorry, No post found!</p>
+          {% endfor %}
+        
+        
+
+          <!-- quote end's here -->
+
+
+
+
+        </div>
+       
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--=================================
+  blog -->
+  
+{% endblock %}
+
+{% block BottomNav %}
+<li><a href="#">Privacy Policy</a></li>
+<li><a href="#">About</a></li>
+<li><a href="#">Team</a></li>
+<li><a href="/contact/">Contact</a></li>
+{% endblock %}
+             
+

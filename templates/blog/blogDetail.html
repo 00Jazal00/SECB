@@ -1,0 +1,312 @@
+{% extends 'require/basic.html' %}
+{% load static %}
+{% block topNav %}
+<li class="nav-item dropdown">
+  <a class="nav-link" href="/" id="navbarDropdown" role="button">Home</a>
+</li>
+
+<li class="nav-item dropdown cursur-pointer">
+  <a class="nav-link dropdown-toggle" href="/jobs/">
+    Jobs </a>
+</li>
+<li class="nav-item dropdown cursur-pointer">
+  <a class="nav-link dropdown-toggle">
+    Scholerships </a>
+</li>
+<li class="nav-item dropdown cursur-pointer">
+  <a class="nav-link dropdown-toggle">
+    Internships </a>
+</li>
+
+<li class="nav-item dropdown cursur-pointer">
+  <a class="nav-link dropdown-toggle active" href="/blog/1">
+    Blog </a>
+</li>
+<li class="nav-item dropdown cursur-pointer">
+  <a class="nav-link dropdown-toggle">
+    Courses</a>
+</li>
+{% endblock %}
+{% block mainBody %} 
+
+<!--=================================
+inner banner -->
+<div class="header-inner bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h2>{{post.title}}</h2>
+          <ol class="breadcrumb mb-0 p-0">
+            <li class="breadcrumb-item"><a href="/blog/">Home</a></li>
+            <li class="breadcrumb-item active"> <i class="fas fa-chevron-right"></i> <span>Blog-Detail</span></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--=================================
+  inner banner -->
+  
+
+<!--=================================
+blog-detail -->
+<section class="space-ptb">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="blog-detail">
+            <div class="blog-post">
+              <div class="blog-post-title">
+                <h4>{{post.title}}</h4>
+              </div>
+              <div class="blog-post-category">
+                <a class="mb-0" href="#">{{post.topic}}</a>
+              </div>
+               <div class="blog-post-footer py-4 border-0">
+                <div class="blog-post-time">
+                  <a href="#"><i class="far fa-clock"></i>{{post.publish_date|date:"d M, Y"}}</a>
+                </div>
+                <div class="blog-post-comment">
+                  <a href="#"><i class="far fa-comment"></i>({{post.comment}})</a>
+                </div>
+                <div class="blog-post-share">
+                  <div class="share-box">
+                    <a href="#"> <i class="fas fa-share-alt"></i><span class="ps-2">Share</span></a>
+                    <ul class="list-unstyled share-box-social">
+                      <li> <a href="#"><i class="fab fa-facebook-f"></i></a> </li>
+                      <li> <a href="#"><i class="fab fa-twitter"></i></a> </li>
+                      <li> <a href="#"><i class="fab fa-linkedin"></i></a> </li>
+                      <li> <a href="#"><i class="fab fa-instagram"></i></a> </li>
+                      <li> <a href="#"><i class="fab fa-pinterest"></i></a> </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="blog-post-image">
+
+                {% if post.type == 'image' %}
+                <div class="blog-post-image">
+                    <img class="img-fluid" src="/media/{{post.picture}}" alt="">
+                  </div>
+                {% endif %}
+                {% if post.type == 'quote' %}
+                <div class="blockquote text-center">
+                    <blockquote class="text-white mb-0">
+                      <i class="fas fa-quote-right"></i>
+                      <p>{{post.quote_header}}</p>
+                      <cite>– {{post.quote_writer_name}}</cite>
+                    </blockquote>
+                  </div>
+                {% endif %}
+                {% if post.type == 'text' %}
+                {{post.text|safe}}
+                {% endif %}
+                {% if post.type == 'video' %}
+                <div class="js-video [youtube, widescreen]">
+                    <iframe src="{{post.video}}" allowfullscreen></iframe>
+                  </div>
+                {% endif %}
+
+                <img class="img-fluid" src="images/blog/01.jpg" alt="">
+              </div>
+              <div class="blog-post-content">
+                <div class="blog-post-description">
+                    {{post.description|safe}}
+                <nav class="navigation post-navigation">
+                  <div class="nav-links">
+                      {% if prev == None %}
+                      <div class="nav-previous" style="pointer-events: none;">
+                      {% else %}
+                      <div class="nav-previous">
+                          {% endif %}
+                        <a href="/BlogDetail/{{prev.code}}">
+                            <span class="pagi-text"> PREV</span><span class="nav-title"> {{prev.title}}</span></a>
+                        </div>
+                        {% if next == None %}
+                        <div class="nav-next" style="pointer-events: none;">
+                            {% else %}
+                            <div class="nav-next">
+                                {% endif %}
+                        <a href="/BlogDetail/{{next.code}}">
+                            <span class="nav-title"> {{next.title}}</span> <span class="pagi-text">NEXT</span></a> </div>
+                    </div>
+                  </nav>
+                
+                  <div class="mt-4">
+                    <h5 class="mb-3">Related Post</h5>
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="owl-carousel " data-nav-dots="true" data-items="2" data-md-items="2" data-sm-items="1" data-xs-items="1" data-xx-items="1" data-space="15">
+                            {% for i in related %}
+                          <div class="item">
+                          <div class="blog-post">
+                            <div class="blog-post-content">
+                              <div class="blog-post-details">
+                                <div class="blog-post-category">
+                                  <a class="mb-1" href="/BlogDetail/{{i.code}}">{{i.topic}}</a>
+                                </div>
+                                 <h5 class="post-title"><a href="#">{{i.title}}</a></h5>
+                                <p>{{i.description|safe|slice:":80"}}</p>
+                              </div>
+                              <div class="blog-post-footer pb-0">
+                                <div class="blog-post-time">
+                                  <a href="#"><i class="far fa-clock"></i>{{i.publish_date |date:"d M, Y"}}</a>
+                                </div>
+                                <div class="blog-post-comment">
+                                  <a href="#"><i class="far fa-comment"></i>({{i.comment}})</a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          </div>
+                          {% empty %}
+          <p>Sorry, No post found!</p>
+          {% endfor %}
+                        </div>
+                      </div>
+                    </div>
+                    <hr class="my-5" />
+                    {% for i in comments %}
+                    <div class="d-sm-flex mb-3">
+                      <div class="d-flex flex-shrink-0 media mb-3 mb-sm-0 avatar avatar-lg">
+                        <img src="/media/images/blog/person.jpg" class="img-fluid rounded-circle" alt="...">
+                      </div>
+                      <div class="flex-grow-1 media-body ms-sm-3 border p-4">
+                        <div class="d-flex">
+                          <h6 class="mt-0">{{i.name}}</h6>
+                        </div>
+                        <p class="mb-0">{{i.message}}</p>
+                      </div>
+                      
+                    </div>
+                    {% empty %}
+                    <p>Sorry, No comment found!</p>
+                    {% endfor %}
+                    <div class="mt-4">
+                      <h5 class="mb-4">Leave a Reply</h5>
+                      <form action="/BlogDetail/{{post.code}}" method="post">
+                        {% csrf_token %}
+                        <div class="row g-2">
+                          <div class="mb-2 col-md-6">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+                          </div>
+                          <div class="mb-2 col-md-6">
+                            <input type="email" class="form-control" name="email" id="inputEmail4" placeholder="Your Email" required>
+                          </div>
+                          <div class="mb-2 col-12">
+                            <input type="text" class="form-control" id="Website" name="website" placeholder="Website (optional)">
+                          </div>
+                          <div class="mb-2 col-md-12">
+                            <textarea class="form-control" name="message" rows="4" placeholder="Your Message" minlength="50" maxlength="1000" required></textarea>
+                          </div>
+                          <div class=" mb-2 col-md-12">
+                            <div class="custom-control form-check">
+                              <input type="checkbox" class="form-check-input" name="permission" id="customCheck1" required>
+                              <label class="custom-control-label form-check-label pe-5" for="customCheck1">I consent to having this website store my submitted information so they can respond to my inquiry.</label>
+                            </div>
+                          </div>
+                          <p style="color: #21c87a; font-weight: bold; padding-left:10px;">{{success}}</p>
+                          <div class="col-md-12 mt-0">
+                            <input class="btn btn-primary" type="submit" value="Send Message">
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        <div class="col-lg-4 mt-4 mt-sm-5 mt-lg-0">
+            <div class="blog-sidebar">
+              <div class="widget">
+                <div class="widget-title">
+                  <h5>Search Job</h5>
+                </div>
+                <a href="/BlogSearch/">
+                <div class="search">
+                  <i class="fas fa-search"></i>
+                  <input type="text" class="form-control" placeholder="Search...">
+                </div>
+                </a>
+              </div>
+              <div class="widget">
+                <div class="widget-title">
+                  <h5>About The Blog</h5>
+                </div>
+                <p>Trying to go through life without clarity is similar to sailing a rudder-less ship!</p>
+                <ol class="ps-3">
+                  <li class="mb-2">Success is something of which we all want.</li>
+                  <li class="mb-2">Most people believe that success is difficult.</li>
+                  <li class="mb-2">They’re wrong – it’s not!</li>
+                </ol>
+              </div>
+              <div class="widget">
+                <div class="widget-title">
+                  <h5>Recent Posts</h5>
+                </div>
+                {% for i in recent_post %}
+                {% if forloop.counter <= 3 %}
+                <div class="d-flex mb-3 align-items-start">
+                  <div class="ms-3 recent-posts">
+                    <a href="/BlogDetail/{{i.code}}"><b>{{i.title}}</b></a>
+                    <a class="d-block font-sm mt-1 text-light" href="#">{{i.publish_date |date:"d M, Y"}}</a>
+                  </div>
+                </div>
+                <hr>
+                {% endif %}
+                {% endfor %}
+              
+              </div>
+             
+           
+              <div class="widget">
+                <div class="widget-title">
+                  <h5>Subscribe & Follow</h5>
+                </div>
+                <div class="social">
+                  <ul class="list-unstyled">
+                    <li class="facebook">
+                      <a class="text-uppercase" href="#"> <i class="fab fa-facebook-f me-3"></i>Facebook</a>
+                      <a class="follow ms-auto" href="#">Like </a>
+                    </li>
+                    <li class="twitter">
+                      <a class="text-uppercase" href="#"> <i class="fab fa-twitter me-3"></i>twitter</a>
+                      <a class="follow ms-auto" href="#">Followers </a>
+                    </li>
+                    <li class="youtube">
+                      <a class="text-uppercase" href="#"> <i class="fab fa-youtube me-3"></i>youtube</a>
+                      <a class="follow ms-auto" href="#">Subscribers </a>
+                    </li>
+                    <li class="instagram">
+                      <a class="text-uppercase" href="#"> <i class="fab fa-instagram me-3"></i>instagram</a>
+                      <a class="follow ms-auto" href="#">Followers </a>
+                    </li>
+                    <li class="linkedin">
+                      <a class="text-uppercase" href="#"> <i class="fab fa-linkedin-in me-3"></i>linkedin</a>
+                      <a class="follow ms-auto" href="#">Followers </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            
+            
+            </div>
+      </div>
+    </section>
+    <!--=================================
+    blog-detail -->
+  
+
+{% endblock %}
+
+{% block BottomNav %}
+<li><a href="#">Privacy Policy</a></li>
+<li><a href="#">About</a></li>
+<li><a href="#">Team</a></li>
+<li><a href="/contact/" style="color: #21c87a;">Contact</a></li>
+{% endblock %}
+               

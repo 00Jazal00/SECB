@@ -1,84 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="keywords" content="SECB" />
-    <meta name="description" content="SECB - Jobs and Scholarships" />
-    <meta name="author" content="USK" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>SECB - Jobs and Scholarships</title>
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700" rel="stylesheet">
+{% extends 'require/basic.html' %}
+{% load static %}
+{% block topNav %}
+<li class="nav-item dropdown">
+  <a class="nav-link" href="/" id="navbarDropdown" role="button">Home</a>
+</li>
 
-    <!-- CSS Global Compulsory (Do not remove)-->
-    <link rel="stylesheet" href="css/font-awesome/all.min.css" />
-    <link rel="stylesheet" href="css/flaticon/flaticon.css" />
-    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+<li class="nav-item dropdown cursur-pointer">
+  <a class="nav-link dropdown-toggle" href="/jobs/">
+    Jobs </a>
+</li>
+<li class="nav-item dropdown cursur-pointer">
+  <a class="nav-link dropdown-toggle">
+    Scholerships </a>
+</li>
+<li class="nav-item dropdown cursur-pointer">
+  <a class="nav-link dropdown-toggle">
+    Internships </a>
+</li>
 
-    <!-- Page CSS Implementing Plugins (Remove the plugin CSS here if site does not use that feature)-->
-    <link rel="stylesheet" href="css/select2/select2.css" />
-    <link rel="stylesheet" href="css/owl-carousel/owl.carousel.min.css" />
-
-    <!-- Template Style -->
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-
-<!--=================================
-Header -->
-<header class="header header-transparent bg-dark" style="position: static;">
-  <nav class="navbar navbar-static-top navbar-expand-lg header-sticky navbar-dark">
-    <div class="container-fluid">
-      <button id="nav-icon4" type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse">
-          <span></span>
-          <span></span>
-          <span></span>
-      </button>
-      <a class="navbar-brand" href="index.html">
-        <!-- <img class="img-fluid" src="images/logo-light.svg" alt="logo"> -->
-        <h1 style="color: white;">S<span style="color: #21c87a;">E</span>CB</h1>
-      </a>
-      <div class="navbar-collapse collapse justify-content-start">
-        <ul class="nav navbar-nav">
-          <li class="nav-item dropdown active">
-            <a class="nav-link" href="#" id="navbarDropdown" role="button">Home</a>
-            
-          </li>
-       
-          <li class="nav-item dropdown cursur-pointer">
-            <a class="nav-link dropdown-toggle">
-              Jobs </a>
-          </li>
-          <li class="nav-item dropdown cursur-pointer">
-            <a class="nav-link dropdown-toggle">
-              Scholerships </a>
-          </li>
-          <li class="nav-item dropdown cursur-pointer">
-            <a class="nav-link dropdown-toggle">
-              Internships </a>
-          </li>
-         
-          <li class="nav-item dropdown cursur-pointer">
-            <a class="nav-link dropdown-toggle">
-              Blog </a>
-          </li>
-          <li class="nav-item dropdown cursur-pointer">
-            <a class="nav-link dropdown-toggle">
-              Courses</a>
-          </li>
-          
-         
-        </ul>
-      </div>
-      <div class="add-listing">
-          <div class="login d-inline-block me-4">
-            <a href="login.html" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><i class="far fa-user pe-2"></i>Sign up</a>
-          </div>
-          <a class="btn btn-white btn-md" href="post-a-job.html"><i class="far fa-user pe-2"></i>Sign in</a>
-        </div>
-    </div>
-  </nav>
-</header>
+<li class="nav-item dropdown cursur-pointer">
+  <a class="nav-link dropdown-toggle" href="/blog/1">
+    Blog </a>
+</li>
+<li class="nav-item dropdown cursur-pointer">
+  <a class="nav-link dropdown-toggle">
+    Courses</a>
+</li>
+{% endblock %}
+{% block mainBody %} 
 <!--=================================
 Header -->
 <!--=================================
@@ -89,8 +38,8 @@ inner banner -->
       <div class="col-12">
         <h2 class="text-primary">Contact Us</h2>
         <ol class="breadcrumb mb-0 p-0">
-          <li class="breadcrumb-item"><a href="index.html"> Home </a></li>
-          <li class="breadcrumb-item active"> <i class="fas fa-chevron-right"></i> <span> Contact us </span></li>
+          <li class="breadcrumb-item"><a href="/"> Home </a></li>
+          <li class="breadcrumb-item active"> <i class="fas fa-chevron-right"></i><a href="/contact/"><span> Contact us</span></a></li>
         </ol>
       </div>
     </div>
@@ -113,25 +62,27 @@ feature-info -->
             </div>
           </div>
         </div>
-        <form>
+        <form action="/contact/" method="post">
+          {% csrf_token %}
           <div class="row g-2">
             <div class="mb-2 col-md-6">
-              <input type="text" class="form-control" id="Username" placeholder="Enter Your Name">
+              <input type="text" class="form-control" name="name" id="Username" placeholder="Enter Your Name" required>
             </div>
             <div class="mb-2 col-md-6">
-              <input type="text" class="form-control" id="email" placeholder="Subject">
+              <input type="text" class="form-control" id="email" placeholder="subject" name="subject" required>
             </div>
             <div class="mb-2 col-md-6">
-              <input type="text" class="form-control" id="Password" placeholder="Enter Your Email Address">
+              <input type="email" class="form-control" name="email" id="Password" placeholder="Enter Your Email Address" required>
             </div>
             <div class="mb-2 col-md-6">
-              <input type="text" class="form-control" id="phone" placeholder="Enter Your Phone Number">
+              <input type="number" class="form-control" id="phone" name="phone_number" placeholder="Enter Your Phone Number" required>
             </div>
             <div class="col-12 mb-0">
-              <textarea rows="5" class="form-control" id="sector" placeholder="Subject"></textarea>
+              <textarea rows="5" class="form-control" name="message" id="sector" placeholder="Subject" minlength="50" maxlength="1000" required></textarea>
             </div>
+            <p style="color: #21c87a; font-weight: bold; padding-left:10px;">{{success}}</p>
             <div class="col-12 mt-4">
-              <a class="btn btn-primary" href="#">Send your message</a>
+              <input type="submit" class="btn btn-primary" value="Send your message">
             </div>
           </div>
         </form>
@@ -240,59 +191,12 @@ Let’s Get In Touch -->
     </div>
   </div>
 </section>
+{% endblock %}
 
-<!--=================================
-Footer-->
-<footer class="footer bg-light">
-
-  <div class="footer-bottom bg-dark">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 ">
-          <div class="d-flex justify-content-md-start justify-content-center">
-            <ul class="list-unstyled d-flex mb-0">
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Team</a></li>
-              <li><a href="#">Contact</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-6 text-center text-md-end mt-4 mt-md-0">
-          <p class="mb-0 text-white"> &copy;Copyright <span id="copyright"> <script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script></span> <span style="color: #21c87a;">SECB</span> All Rights Reserved </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
-<!--=================================
-Footer-->
-
-<!--=================================
-Back To Top-->
-   <div id="back-to-top" class="back-to-top">
-     <i class="fas fa-angle-up"></i>
-   </div>
-<!--=================================
-Back To Top-->
-
-
-<!--=================================
-Javascript -->
-
-  <!-- JS Global Compulsory (Do not remove)-->
-  <script src="js/jquery-3.6.0.min.js"></script>
-  <script src="js/popper/popper.min.js"></script>
-  <script src="js/bootstrap/bootstrap.min.js"></script>
-
-  <!-- Page JS Implementing Plugins (Remove the plugin script here if site does not use that feature)-->
-  <script src="js/jquery.appear.js"></script>
-  <script src="js/counter/jquery.countTo.js"></script>
-  <script src="js/owl-carousel/owl-carousel.min.js"></script>
-  <script src="js/select2/select2.full.js"></script>
-
-  <!-- Template Scripts (Do not remove)-->
-  <script src="js/custom.js"></script>
-
-</body>
-</html>
+{% block BottomNav %}
+<li><a href="#">Privacy Policy</a></li>
+<li><a href="#">About</a></li>
+<li><a href="#">Team</a></li>
+<li><a href="/contact/" style="color: #21c87a;">Contact</a></li>
+{% endblock %}
+               

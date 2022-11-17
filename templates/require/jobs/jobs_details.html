@@ -1,0 +1,302 @@
+{% extends 'require/basic.html' %}
+{% load static %}
+{% block topNav %}
+<li class="nav-item dropdown">
+  <a class="nav-link" href="/" id="navbarDropdown" role="button">Home</a>
+</li>
+
+<li class="nav-item dropdown cursur-pointer active">
+  <a class="nav-link dropdown-toggle" href="/jobs/">
+    Jobs </a>
+</li>
+<li class="nav-item dropdown cursur-pointer">
+  <a class="nav-link dropdown-toggle">
+    Scholerships </a>
+</li>
+<li class="nav-item dropdown cursur-pointer">
+  <a class="nav-link dropdown-toggle">
+    Internships </a>
+</li>
+
+<li class="nav-item dropdown cursur-pointer">
+  <a class="nav-link dropdown-toggle" href="/blog/1">
+    Blog </a>
+</li>
+<li class="nav-item dropdown cursur-pointer">
+  <a class="nav-link dropdown-toggle">
+    Courses</a>
+</li>
+{% endblock %}
+{% block mainBody %} 
+<style>
+  .Temporary{
+    background-color: #e74c3c;
+  }
+    .Part-time{
+      background-color: #ffc107;
+    }
+    .Full-time,
+    .Goverment{
+      background-color: #53b427;
+    }
+    .Freelance,
+    .Private{
+      background-color: #146ebe;
+    }
+    
+</style>
+<!--=================================
+inner banner -->
+<div class="header-inner bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="text-primary">Jobs</h2>
+        <ol class="breadcrumb mb-0 p-0">
+          <li class="breadcrumb-item"><a href="/"> Home </a></li>
+          <li class="breadcrumb-item active"> <i class="fas fa-chevron-right"></i> <a href="/jobs/"><span> Jobs</span></a></li>
+          <li class="breadcrumb-item active"> <i class="fas fa-chevron-right"></i> <span> Details</span></li>
+          <li class="breadcrumb-item active"> <i class="fas fa-chevron-right"></i> <span> {{details.title}}</span></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+<!--=================================
+inner banner -->
+
+
+<!--=================================
+job list -->
+<section class="space-ptb">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="job-list border">
+                <div class=" job-list-logo">
+                  <img class="img-fluid" src="/media/{{details.picture}}" alt="">
+                </div>
+                <div class="job-list-details">
+                  <div class="job-list-info">
+                    <div class="job-list-title">
+                      <h5 class="mb-0">{{details.title}}</h5>
+                    </div>
+                    <div class="job-list-option">
+                      <ul class="list-unstyled">
+                        <li><i class="fas fa-map-marker-alt pe-1"></i>{{details.location}}</li>
+                        <li><i class="fa-solid fa-phone"></i><span class="ps-2">{{details.phone_number}}</span></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="job-list-favourite-time">
+                  <a  class="job-list-favourite order-2" href="#"><i class="far fa-heart"></i></a>
+                  <span class="job-list-time order-1"><i class="far fa-clock pe-1"></i>{{details.publish_date.date}}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="border p-4 mt-4 mt-lg-5">
+            <div class="row">
+              <div class="col-md-4 col-sm-6 mb-4">
+                <div class="d-flex">
+                  <i class="font-xll text-primary align-self-center flaticon-debit-card"></i>
+                  <div class="feature-info-content ps-3">
+                    <label class="mb-1">Offered Salary</label>
+                    <span class="mb-0 fw-bold d-block text-dark">{{details.salary}}</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6 mb-4">
+                <div class="d-flex">
+                  <i class="font-xll text-primary align-self-center flaticon-love"></i>
+                  <div class="feature-info-content ps-3">
+                    <label class="mb-1">Gender</label>
+                    <span class="mb-0 fw-bold d-block text-dark">{{details.gender}}</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6 mb-4">
+                <div class="d-flex">
+                  <i class="font-xll text-primary align-self-center flaticon-bar-chart"></i>
+                  <div class="feature-info-content ps-3">
+                    <label class="mb-1">Career Level</label>
+                    <span class="mb-0 fw-bold d-block text-dark">{{details.career_level}}</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6 mb-md-0 mb-4">
+                <div class="d-flex">
+                  <i class="font-xll text-primary align-self-center flaticon-apartment"></i>
+                  <div class="feature-info-content ps-3">
+                    <label class="mb-1">Industry</label>
+                    <span class="mb-0 fw-bold d-block text-dark">{{details.industry}}</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6 mb-sm-0 mb-4">
+                <div class="d-flex">
+                  <i class="font-xll text-primary align-self-center flaticon-medal"></i>
+                  <div class="feature-info-content ps-3">
+                    <label class="mb-1">Experience</label>
+                    <span class="mb-0 fw-bold d-block text-dark">{{details.experience}}</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6">
+                <div class="d-flex">
+                  <i class="font-xll text-primary align-self-center flaticon-mortarboard"></i>
+                  <div class="feature-info-content ps-3">
+                    <label class="mb-1">Qualification</label>
+                    <span class="mb-0 fw-bold d-block text-dark">{{details.qualifications}}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="my-4 my-lg-5">
+            <h5 class="mb-3 mb-md-4">Job Description</h5>
+            {{details.jobs_descriptions|safe}}
+          </div>
+          <hr>
+          <div class="my-4 my-lg-5">
+            <h5 class="mb-3 mb-md-4">Required Knowledge, Skills, and Abilities</h5>
+            <ul class="list-unstyled list-style">
+              {% for i in skills %}
+              <li><i class="far fa-check-circle font-md text-primary me-2"></i>{{i}}</li>
+              {% endfor %}
+            </ul>
+          </div>
+          <hr>
+          <div class="mt-4 mt-lg-5">
+            <h5 class="mb-3 mb-md-4">Education + Experience</h5>
+            <ul class="list-unstyled list-style mb-4 mb-lg-0">
+              {% for i in experience %}
+              <li><i class="far fa-check-circle font-md text-primary me-2"></i>{{i}}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+        <!--=================================
+        sidebar -->
+        <div class="col-lg-4">
+          <div class="sidebar mb-0">
+            <div class="widget border-0 d-grid">
+              <a class="btn btn-primary" href="#"><i class="far fa-paper-plane"></i>Apply for job</a>
+            </div>
+            <div class="widget border-0">
+              <div class="company-detail-meta">
+                <ul class="list-unstyled">
+                  <li class="linkedin"><a href="#"><i class="fab fa-linkedin-in"></i><span class="ps-2">Apply with Linkedin</span></a></li>
+                  <li><div class="share-box share-dark-bg">
+                    <a href="#"> <i class="fas fa-share-alt"></i><span class="ps-2">Share</span></a>
+                    <ul class="list-unstyled share-box-social">
+                      <li> <a href="#"><i class="fab fa-facebook-f"></i></a> </li>
+                      <li> <a href="#"><i class="fab fa-twitter"></i></a> </li>
+                      <li> <a href="#"><i class="fab fa-linkedin"></i></a> </li>
+                      <li> <a href="#"><i class="fab fa-instagram"></i></a> </li>
+                      <li> <a href="#"><i class="fab fa-pinterest"></i></a> </li>
+                    </ul>
+                  </div></li>
+                  <li><a href="#"><i class="fas fa-print"></i><span class="ps-2">Print</span></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="widget">
+              <div class="company-address widget-box">
+                <div class="company-address-map">
+                  <iframe src="{{details.map}}"  height="230" allowfullscreen></iframe>
+                </div>
+                <ul class="list-unstyled mt-3">
+                  <li><a href="#"><i class="fas fa-link fa-fw"></i><span class="ps-2">{{details.website_link}}</span></a></li>
+                  <li><a href="tel:+905389635487"><i class="fa-solid fa-phone"></i><span class="ps-2">{{details.phone_number}}</span></a></li>
+                  <li><a href="mailto:ali.potenza@job.com"><i class="fas fa-envelope fa-fw"></i><span class="ps-2">{{details.email}}</span></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="widget border-0">
+              <div class="jobster-company-view">
+                <ul class="list-unstyled">
+                  <li>
+                    <div class="widget-box">
+                      <div class="d-flex">
+                        <i class="flaticon-clock fa-2x fa-fw text-primary"></i>
+                        <span class="ps-3">{{details.remaining_days}} Days</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="widget-box">
+                      <div class="d-flex">
+                        <i class="flaticon-loupe fa-2x fa-fw text-primary"></i>
+                        <span class="ps-3">{{details.visitors}} Displayed</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="widget-box">
+                      <div class="d-flex">
+                        <i class="flaticon-personal-profile fa-2x fa-fw text-primary"></i>
+                        <span class="ps-3">{{details.applications}} Application</span>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="widget">
+              <div class="widget-title mb-0">
+                <h5>Similar Jobs</h5>
+              </div>
+              <div class="similar-jobs-item widget-box">
+                {% for i in related_jobs %}
+                {% if forloop.counter <= 4 %}
+                <div class="job-list border-bottom">
+                  <div class="job-list-logo">
+                    <img class="img-fluid" src="/media/{{i.picture}}" alt="">
+                  </div>
+                  <div class="job-list-details">
+                    <div class="job-list-info">
+                      <div class="job-list-title">
+                        <h6><a href="/jobDetail/{{i.code}}">{{i.title|slice:":15"}}...</a></h6>
+                        <span class="{{i.timing}}">{{i.timing}}</span>
+                      </div>
+                      <div class="job-list-option">
+                        <ul class="list-unstyled">
+                          <li>
+                            <span>via</span>
+                            <a style="color: #21c87a;">{{i.company}}</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+               {% endif %}
+               
+               {% endfor %}
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--=================================
+        sidebar -->
+      </div>
+    </div>
+  </section>
+  <!--=================================
+  job list -->
+  
+
+{% endblock %}
+
+{% block BottomNav %}
+<li><a href="#">Privacy Policy</a></li>
+<li><a href="#">About</a></li>
+<li><a href="#">Team</a></li>
+<li><a href="/contact/">Contact</a></li>
+{% endblock %}
+               

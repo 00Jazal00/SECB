@@ -1,0 +1,130 @@
+{% extends 'require/basic.html' %}
+{% load static %}
+{% block topNav %}
+<li class="nav-item dropdown">
+  <a class="nav-link" href="/" id="navbarDropdown" role="button">Home</a>
+</li>
+
+<li class="nav-item dropdown cursur-pointer active">
+  <a class="nav-link dropdown-toggle" href="/jobs/">
+    Jobs </a>
+</li>
+<li class="nav-item dropdown cursur-pointer">
+  <a class="nav-link dropdown-toggle">
+    Scholerships </a>
+</li>
+<li class="nav-item dropdown cursur-pointer">
+  <a class="nav-link dropdown-toggle">
+    Internships </a>
+</li>
+
+<li class="nav-item dropdown cursur-pointer">
+  <a class="nav-link dropdown-toggle" href="/blog/1">
+    Blog </a>
+</li>
+<li class="nav-item dropdown cursur-pointer">
+  <a class="nav-link dropdown-toggle">
+    Courses</a>
+</li>
+{% endblock %}
+{% block mainBody %} 
+<style>
+  .Temporary{
+    background-color: #e74c3c;
+  }
+    .Part-time{
+      background-color: #ffc107;
+    }
+    .Full-time,
+    .Goverment{
+      background-color: #53b427;
+    }
+    .Freelance,
+    .Private{
+      background-color: #146ebe;
+    }
+    
+    
+</style>
+<!--=================================
+inner banner -->
+<div class="header-inner bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="text-primary">Jobs</h2>
+        <ol class="breadcrumb mb-0 p-0">
+          <li class="breadcrumb-item"><a href="index.html"> Home </a></li>
+          <li class="breadcrumb-item active"> <i class="fas fa-chevron-right"></i> <span> Jobs</span></li>
+          <li class="breadcrumb-item active"> <i class="fas fa-chevron-right"></i> <span> {{type}}</span></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+<!--=================================
+inner banner -->
+
+<!--=================================
+Browse listing -->
+<section class="space-ptb bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="section-title">
+          <h2 class="title"><span> {{type}} Jobs </span></h2>
+        </div>
+        
+        <div class="tab-content" id="myTabContent">
+          <!-- All jobs -->
+        
+            {% for i in jobs %}
+            <div class="job-list">
+              <div class="job-list-logo">
+                <img class="img-fluid" src="/media/{{i.picture}}" alt="">
+              </div>
+              <div class="job-list-details">
+                <div class="job-list-info">
+                  <div class="job-list-title">
+                    <h5 class="mb-0"><a href="/jobDetail/{{i.code}}">{{i.name}}</a></h5>
+                    <span class="{{i.timing}}">{{i.timing}}</span>
+                  </div>
+                  <div class="job-list-option">
+                    <ul class="list-unstyled">
+                      <li>
+                        <span>via</span>
+                        <a style="color: #21c87a; cursor:pointer;">{{i.company}}</a>
+                      </li>
+                      <li><i class="fas fa-map-marker-alt pe-1"></i>{{i.out_location}}</li>
+                      <li><i class="fas fa-filter pe-1"></i>{{i.out_category}}</li>
+                      <li><i class="fa-solid fa-code pe-1"></i>{{i.code}}</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="job-list-favourite-time">
+                <a  class="job-list-favourite order-2" href="#"><i class="far fa-heart"></i></a>
+                <span class="job-list-time order-1"><i class="far fa-clock pe-1"></i>{{i.publish_date.time}}</span> 
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--=================================
+Browse listing -->
+
+
+<!--================================= -->
+{% endblock %}
+
+{% block BottomNav %}
+<li><a href="#">Privacy Policy</a></li>
+<li><a href="#">About</a></li>
+<li><a href="#">Team</a></li>
+<li><a href="/contact/">Contact</a></li>
+{% endblock %}
+               

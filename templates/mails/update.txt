@@ -1,0 +1,16 @@
+<body style="background-color: #d3d3d3;">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+    </style>
+    <br><br>
+    <center>
+        <div style="background-color: #fff; width: 784px; height: max-content; border-radius: 5px; padding: 50px; font-family: 'Kanit', sans-serif; ">
+            <br><br>
+            This is Our Update.
+    </div>
+    <br><br>
+        </div>
+    </center>
+    
+    <br><br><br><br><br><br><br>
+</body>

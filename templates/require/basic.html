@@ -1,0 +1,113 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="SECB" />
+    <meta name="description" content="SECB - Jobs and Scholarships" />
+    <meta name="author" content="USK" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>SECB - Jobs and Scholarships{% block title %} {% endblock %}
+    </title>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700" rel="stylesheet">
+
+    <!-- CSS Global Compulsory (Do not remove)-->
+    <link rel="stylesheet" href="{% static 'home/css/font-awesome/all.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'home/css/flaticon/flaticon.css' %}" />
+    <link rel="stylesheet" href="{% static 'home/css/bootstrap/bootstrap.min.css' %}" />
+
+    <!-- Page CSS Implementing Plugins (Remove the plugin CSS here if site does not use that feature)-->
+    <link rel="stylesheet" href="{% static 'home/css/select2/select2.css' %}" />
+    <link rel="stylesheet" href="{% static 'home/css/owl-carousel/owl.carousel.min.css' %}" />
+
+    <!-- Template Style -->
+    <link rel="stylesheet" href="{% static 'home/css/style.css' %}" />
+    {% block toplink %} {% endblock %}
+  </head>
+  <body>
+
+<!--=================================
+Header -->
+<header class="header header-transparent bg-dark" style="position: static;">
+  <nav class="navbar navbar-static-top navbar-expand-lg header-sticky navbar-dark">
+    <div class="container-fluid">
+      <button id="nav-icon4" type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse">
+          <span></span>
+          <span></span>
+          <span></span>
+      </button>
+      <a class="navbar-brand" href="index.html">
+        <!-- <img class="img-fluid" src="images/logo-light.svg" alt="logo"> -->
+        <h1 style="color: white;">S<span style="color: #21c87a;">E</span>CB</h1>
+      </a>
+      <div class="navbar-collapse collapse justify-content-start">
+        <ul class="nav navbar-nav">
+          {% block topNav %} {% endblock %}
+        </ul>
+      </div>
+      <div class="add-listing">
+          <div class="login d-inline-block me-4">
+            <a href="login.html" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><i class="far fa-user pe-2"></i>Sign up</a>
+          </div>
+          <a class="btn btn-white btn-md" href="post-a-job.html"><i class="far fa-user pe-2"></i>Sign in</a>
+        </div>
+    </div>
+  </nav>
+</header>
+
+{% block mainBody %} {% endblock %}
+
+<!--=================================
+Footer-->
+<footer class="footer bg-light">
+
+    <div class="footer-bottom bg-dark">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 ">
+            <div class="d-flex justify-content-md-start justify-content-center">
+              <ul class="list-unstyled d-flex mb-0">
+                {% block BottomNav %} {% endblock %}
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6 text-center text-md-end mt-4 mt-md-0">
+            <p class="mb-0 text-white"> &copy;Copyright <span id="copyright"> <script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script></span> <span style="color: #21c87a;">SECB</span> All Rights Reserved </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!--=================================
+  Footer-->
+  
+  <!--=================================
+  Back To Top-->
+     <div id="back-to-top" class="back-to-top">
+       <i class="fas fa-angle-up"></i>
+     </div>
+  <!--=================================
+  Back To Top-->
+  
+  
+  <!--=================================
+  Javascript -->
+  
+    <!-- JS Global Compulsory (Do not remove)-->
+    <script src="{% static 'home/js/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'home/js/popper/popper.min.js' %}"></script>
+    <script src="{% static 'home/js/bootstrap/bootstrap.min.js' %}"></script>
+
+    <!-- Page JS Implementing Plugins (Remove the plugin script here if site does not use that feature)-->
+    <script src="{% static 'home/js/jquery.appear.js' %}"></script>
+    <script src="{% static 'home/js/counter/jquery.countTo.js' %}"></script>
+    <script src="{% static 'home/js/owl-carousel/owl-carousel.min.js' %}"></script>
+    <script src="{% static 'home/js/select2/select2.full.js' %}"></script>
+
+    <!-- Template Scripts (Do not remove)-->
+    <script src="{% static 'home/js/custom.js' %}"></script>
+  
+  </body>
+  </html>
+  
